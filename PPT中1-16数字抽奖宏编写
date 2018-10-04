@@ -1,0 +1,29 @@
+Public a, b As Integer
+Private Sub CommandButton1_Click()
+b = 0
+Do While True
+a = 1 + Int(Rnd() * 16)
+Label1.Caption = a
+
+Dim Savetime As Single
+Savetime = Timer
+While Timer < Savetime + 0.005
+DoEvents
+Wend
+
+If b = 1 Then
+    Exit Do
+End If
+Loop
+End Sub
+
+
+
+
+
+
+
+Private Sub CommandButton2_Click()
+b = 1
+Label1.Caption = a
+End Sub
