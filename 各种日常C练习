@@ -1,0 +1,79 @@
+#include <stdio.h>
+int main()
+{
+        int age = 15;
+        int height = 162;
+        double weight = 82.5;
+        char isfat = 'y';
+    printf("年龄：%d 岁\n", age);
+    printf("身高：%d CM\n", height);
+    printf("体重：%f KG\n", weight);
+    printf("是否属于肥胖儿童：%c\n", isfat); 
+    /*%d,%f,%c此类符号在后面会有讲解*/
+    return 0;    
+}
+
+
+
+
+
+#include <stdio.h>
+int main(){
+    int age = 18;
+	float height = 1.85;
+	char unit = 'm';
+	printf("小明今年%d岁\n", age);
+	printf("小明身高%f%c\n", height, unit);
+	printf("小明现在学习IT技术"); 
+	return 0;
+}
+
+
+
+
+#include <stdio.h>
+int main()
+{
+    char c = 'a';
+    int n = c;         //将c赋值给n
+    float f = c;      //将c赋值给f
+    double d = c;     //将c赋值给d
+    printf("%d\n",n);
+    printf("%f\n",f);
+    printf("%lf\n",d);
+    return 0;    
+} 
+  
+#include <stdio.h>
+int main()
+{
+    double num = 2.5;      //定义浮点型变量num并赋值为2.5
+    int mun = (int)num; 
+    printf("num的整数部分是%d\n", mun);  
+    return 0;
+}  
+  
+  
+#include <stdio.h>
+int main()
+{
+    int x,y;
+    x = 10;
+    y = -3;
+    printf("x+y=%d\n",x+y       );  
+    printf("x-y=%d\n",x-y     );
+    printf("x*y=%d\n",x*y     );
+    printf("x/y=%d\n", x/y    );
+    printf("x%%y=%d\n",  x%y   );  
+    return 0;    
+}
+
+
+#include <stdio.h>
+int main()
+{
+    int x = 0;
+    printf("x=%d\n",x++);
+    printf("x=%d\n",++x);
+    return 0;
+}  
