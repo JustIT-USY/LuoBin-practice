@@ -1,0 +1,57 @@
+赋值运算符练习
+#include <stdio.h>
+int main()
+{
+    int x = 10;
+    
+    int y = 10;
+    x=x*2;
+    
+    y*=2;
+    printf("x=%d\n", x);
+    printf("y=%d\n", y);
+    return 0;
+}
+
+
+关系运算符练习
+#include <stdio.h>
+int main()
+{
+    int x=5;
+    int y=5;
+    int z=10;
+    printf("x是否大于y:%d\n",x>y             ); //x是否大于y
+    printf("y是否大于等于x:%d\n",y>=x         ); //y是否大于等于x
+    printf("y是否小于z:%d\n",  y<z           ); //y是否小于z
+    printf("z是否小于等于x:%d\n",     z<x     ); //z是否小于等于x
+    printf("z是否等于x+y:%d\n",     z=x+y       ); //z是否等于x+y
+    return 0;
+}
+
+
+逻辑运算符练习
+#include <stdio.h>
+int main()
+{
+    int height = 175;   //身高为175cm
+    double money = 1500000;  //银行存款为150万
+    printf("是否符合条件：%d\n",height>=180&&money>=1000000         ); 
+    return 0;    
+}
+
+
+
+三目运算符练习
+#include <stdio.h>
+int main()
+{
+    //定义兜里的钱
+    double money =12      ; 
+    //定义打车回家的费用
+    double cost = 11.5      ;  
+    printf("小编能不能打车回家呢："); 
+    //输出y就打车回家了，输出n就不能打车回家
+    printf("%c",money>=cost?'y':'n'                        );
+    return 0;
+}
