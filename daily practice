@@ -1,0 +1,95 @@
+简单以if语句
+
+#include <stdio.h>
+int main() 
+{       
+    int height = 185;
+  
+    if(height>=180){
+        printf("恭喜小明可以参加校篮球队");
+    }
+    
+    
+    
+	return 0;
+}
+
+
+多重if else 语句
+#include <stdio.h>
+int main() 
+{
+    int score = 7200;
+
+    if (score>=10000)
+    {
+        printf("钻石玩家");
+    }
+    else if (score>=5000)
+    {
+        printf("白金玩家");    
+    }
+    else if (score >=1000)
+    {
+        printf("青铜玩家");     
+    }
+    else
+    {
+        printf("普通玩家");    
+    }
+    return 0;
+}
+
+
+嵌套if else语句
+#include <stdio.h>
+int main() 
+{
+    int sale=120; //销售业绩为120万
+    int year=1; //刚刚进入公司1年
+    if(sale>100)
+    {
+        if(year>=2)
+        {
+            printf("%s\n","恭喜你，获得了优秀员工奖。");
+        }
+        else
+        {
+            printf("%s\n","很遗憾，期望你再接再厉");
+        }
+    }
+    else 
+    {
+        printf ("%s\n","很遗憾，期望你再接再厉");
+    }
+    
+    
+    while 循环
+    #include <stdio.h>
+int main()
+{
+    int i,sum=0;
+    i=1;
+    while(i<=100)  //循环条件应该是什么呢？
+    {
+        sum=sum+i;
+        i++ ;        //这里是不是应该改变循环变量的值
+    }
+    printf("100以内所有整数之和为：%d\n", sum);
+    return 0;
+}
+
+do while 循环
+
+#include <stdio.h>
+int main()
+{
+    int number=200;
+    int year=2014;
+    do{
+      year++;     
+      number*=1.2;                   
+    }while(number<1000);     
+    printf("到%d年招工规模突破1000人\n", year);
+    return 0;
+}
