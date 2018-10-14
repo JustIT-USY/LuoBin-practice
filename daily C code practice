@@ -1,0 +1,93 @@
+
+
+
+for循环
+#include <stdio.h>
+int main()
+{
+    //定义三位数num,个位数sd,十位数td,百位数hd
+    int num, sd, td, hd;
+    //循环所有三位数
+    for(   num=100  ;  num<1000   ;    num++  )
+    {
+        //获取三位数字num百位上的数字
+        hd =    num/100             ;
+        //获取三位数字num十位上的数字
+        td =    (num-num/100*100)/10    ;
+        //获取三位数字num个位上的数字
+        sd =  num-num/10*10               ;
+        //水仙花数的条件是什么？
+        if(num==hd*hd*hd+td*td*td+sd*sd*sd  ) 
+        {
+            printf("水仙花数字：%d\n", num);    
+        }
+    }
+    return 0;    
+}
+
+
+3种循环计算一个结果
+#include <stdio.h>
+int main()
+{
+    int sum = 0;  //定义计算结果变量sum
+    int i = 1;    //定义循环数字变量i
+    int flag = 1; //定义符号状态变量flag
+     
+    //使用while循环
+    while(i<=100)
+    {
+        i++;
+        sum+=i*flag;
+        flag*=-1;
+        
+    }
+    printf("sum=%d\n,sum");
+    
+    i = 1;  //重新初始化变量i
+   
+    //do-while循环
+    do{
+        i++;
+        sum+=i*flag;
+        flag*=-1;
+        
+        
+    }while(i<=100);
+    printf("sum=%d\n",sum); 
+   
+    i = 1;  //重新初始化变量i
+    
+    //使用for循环
+    for(i=1;i<=100;i++)
+    {
+        sum+=i*flag;
+        flag*=-1;
+        
+    }  
+    printf("sum=%d\n",sum); 
+    
+    return 0;    
+}
+
+用星号画出三角形
+#include <stdio.h>
+int main()
+{
+    int i, j, k;
+    for(i=1; i<5; i++)
+    {
+        /* 观察每行的空格数量，补全循环条件 */
+        for(j=i     ;j<5  ;  j++  )  
+        {
+            printf(" ");    //输出空格
+        }
+        /* 观察每行*号的数量，补全循环条件 */
+        for( k=0 ; k<2*i-1  ; k++     ) 
+        {
+            printf("*");   //每行输出的*号
+        }
+        printf("\n");     //每次循环换行
+    }
+    return 0;
+}
