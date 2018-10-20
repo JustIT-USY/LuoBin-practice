@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+/* 自定义整型函数 sayLove() */
+int sayLove()
+{
+    
+    printf("%s\n", "I Love coding");
+    return 0;
+}
+
+/* 自定义整型函数 dividLine() */
+int dividLine()
+{
+    printf("%s\n", "*************");
+    return 0;
+}
+
+/* 主函数 */
+int main()
+{
+    /* 调用所写函数 */
+    dividLine();
+    sayLove();
+    dividLine();
+    return 0;
+}
