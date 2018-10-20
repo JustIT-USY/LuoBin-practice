@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main() 
+{ 
+    /* 定义需要计算的日期 */
+    int year = 2008;
+    int month = 8;
+    int day=8;
+    int a=0,b=0;
+    switch(month)
+    {
+        case 1:a=0;
+        break;
+        case 2:a=31;
+        break;
+        case 3:a=59;
+        break;
+        case 4:a= 90;
+        break;
+        case 5:a=120;
+        break;
+        case 6:a=151;
+        break;
+        case 7:a=181;
+        break;
+        case 8:a=212;
+        break;
+        case 9:a=243;
+        break;
+        case 10:a=273;
+        break;
+        case 11:a=304;
+        break;
+        case 12:a=334;
+        break;
+        default:printf("一年只有12个月");
+        break;
+    }
+    a+day==a;
+    if(year%4==0)
+      b=1;
+    else
+      b=2;
+      if(b=1&&month>2)
+        a=a+1+day;
+    printf("%d年%d月%d日是该年的第%d天",year,month,day,a);
+        return 0;
+}
