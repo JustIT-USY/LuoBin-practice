@@ -1,0 +1,124 @@
+函数返回值
+#include <stdio.h>
+
+ int  joneResult(int x, int y, int z)
+{
+   int sum = x+y+z;
+   return sum/3;          
+}
+
+ void jackResult(int x, int y, int z)
+{
+    printf("我算不出来\n");
+}
+int main()
+{
+    int a, b, c;
+    a = 10;
+    b = 20;
+    c = 30;
+   
+      int   jR = joneResult(a, b, c); 
+    printf("Jone运算结果是：%d\n", jR);
+    printf("Jack运算结果是：");
+   
+    jackResult(a,b,c);
+    return 0;
+}
+
+形参与实参
+#include <stdio.h>
+int getGirth(int a,int b,int c)
+{
+    if( (a+b)<=c || (a+c)<=b || (b+c)<=a )   //判断是否为三角形
+    {
+        printf("不构成三角形\n");
+        return 0;                                
+    }
+    else
+    {
+      int cirf = a+b+c ;     //计算三角形周长
+      return cirf;
+    }
+       
+}
+
+int main()
+{
+    /* 定义三角形三边长 */
+    int a, b, c;
+    a = 3;
+    b = 4;
+    c = 5;
+    printf("三角形的周长是：%d\n", getGirth(a,b,c));  //调用周长函数
+    return 0;
+}
+
+有参与无参
+#include <stdio.h>
+
+int alibi()
+{
+    printf("%s\n","小明在慕课网上学习");
+    return 0;
+    
+}
+int ash(int n)
+{
+    printf("小明在网上学习了%d门课程",n);
+    return 0;
+}
+
+
+int main()
+{
+    alibi();
+    ash(5);
+
+    return 0;
+}
+
+递归函数
+#include <stdio.h>
+
+/* 定义获取单词数量的函数 */
+int getWordNumber(int n)
+{   
+    if(n == 1)
+    {
+        return 1;    //第一天只会1个单词
+    }
+    else
+    { 
+        return getWordNumber (n-1)+n ;      //到第天会的单词数量
+    }
+}
+int main()
+{
+    int num = getWordNumber(10);     //获取会了的单词数量
+    printf("小明第10天记了:%d个单词。\n", num);
+    return 0;
+}
+
+递归2
+#include <stdio.h>
+int getPeachNumber(n)
+{
+    int num;    //定义所剩桃子数
+    if(n==10)
+    {
+       return 1;       //递归结束条件
+    } 
+    else
+    {
+        num = (getPeachNumber(n+1)+1)*2;    
+        printf("第%d天所剩桃子%d个\n", n, num); //天数，所剩桃子个数
+    }
+    return num;
+}
+int main()
+{
+    int num = getPeachNumber(1);
+    printf("猴子第一天摘了:%d个桃子。\n", num);
+    return 0;
+}
