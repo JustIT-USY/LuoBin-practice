@@ -1,0 +1,61 @@
+递归3
+#include <stdio.h> 
+int a(int p)
+{
+    int age;
+    if(p==1)
+    age=10;
+    else
+    age=a(p-1)+2;
+    return age;
+}
+
+int main() 
+{
+   int fp= a(5);   
+	printf("第5个人的年龄是%d岁", fp); 
+	return 0;
+}
+
+局部与全局
+#include <stdio.h>
+int x = 77;
+void fn1()
+{
+    printf("fn1(): x=%d\n", x);       
+}
+int main()
+{
+    int x = 10;
+    if(x>0)
+    {
+        int x = 100;
+        x /= 2;
+        printf("if语句内, x=%d\n", x);       
+    }
+    printf("main方法内, x=%d\n", x);
+    fn1();
+    return 0;
+}
+
+变量存储类别
+#include <stdio.h>
+void fn()
+{
+    static int x = 1;   //定义静态局部变量
+    x*=2;
+    printf("x=%d\n",x);     
+}
+
+int main()
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        fn();
+    }
+    extern  int x;      //调用外部变量
+    printf("x=%d\n",x);
+    return 0;
+}
+int x=100;
