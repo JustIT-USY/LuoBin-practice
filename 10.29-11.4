@@ -1,0 +1,188 @@
+数组
+#include <stdio.h>
+int main()
+{
+    //第一种形式
+    int arrFirst[3] = {1,2,3};
+    //第二种形式
+    int arrSecond[] = {1,2,3};
+    //第三种形式
+    int arrThird[3];
+    //给arrThird数组每个元素初始化
+    arrThird[0]=1;
+    arrThird[1]=2;
+    arrThird[2]=3;
+    
+    //输出第一个数组中的第二个元素
+    printf("%d\n", arrFirst[1]);
+    //输出第二个数组中的第二个元素
+    printf("%d\n", arrSecond[1]);
+    //输出第三个数组中的第二个元素
+    printf("%d\n", arrThird[1]);
+    return 0;
+}
+数组作为函数参数
+#include <stdio.h>
+void replaceMax(int arr[],int value)
+{
+    int max = arr[0];
+    int index = 0;
+    int i;
+    for(i=1;i<5;i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];          //将数组中较大的数赋值给max
+            index = i;  //记录当前索引
+        }                
+    }  
+    arr[index] = value;
+}
+
+int main()
+{
+    int arr1[] = {10,41,3,12,22};
+    int arr2[] = {1,2,3,4,5};
+    int i;
+    replaceMax(arr1 , arr2[0]  ); //将数组arr1和数组arr2的第一个元素传入函数中
+    for(i=0;i<5;i++)
+    {
+        printf("%d ",arr1[i]);                
+    }
+    return 0;    
+}
+数组排序应用
+#include <stdio.h>
+int main()
+{
+    double arr[]={1.78, 1.77, 1.82, 1.79, 1.85, 1.75, 1.86, 1.77, 1.81, 1.80};
+    int i,j;
+    printf("\n************排队前*************\n");
+    for(i=0;i<10;i++)
+    {
+        if(i != 9)   
+            printf("%.2f, ", arr[i]);  //%.2f表示小数点后精确到两位
+        else
+            printf("%.2f", arr[i]);    //%.2f表示小数点后精确到两位
+    }
+    for(i=8; i>=0; i--)
+    {
+        for(j=0;j<=i;j++)
+        {
+            if(arr[j]>arr[j+1]           )      //当前面的数比后面的数大时
+            {
+                double temp;    //定义临时变量temp
+                temp=arr[j];     //将前面的数赋值给temp
+                arr[j]=arr[j+1];              //前后之数颠倒位置
+                arr[j+1]=temp;              //将较大的数放在后面    
+            }                 
+        }                
+    }
+    printf("\n************排队后*************\n");
+    for(i=0;i<10;i++)
+    {
+        if(i != 9)   
+            printf("%.2f, ", arr[i]);  //%.2f表示小数点后精确到两位     
+        else
+            printf("%.2f", arr[i]);    //%.2f表示小数点后精确到两位
+    }
+    return 0;    
+}
+数组查找功能
+#include <stdio.h>
+int getIndex(int arr[5],int value)
+{
+    int i;
+    int index;
+    for(i=0;i<5;i++)
+    {
+       if(arr[i]==value)
+       {
+           index = i;
+           break;
+       }
+       else
+       {
+           index=-1;
+       }
+           
+    }
+    
+    return index;
+}
+
+int main()
+{
+    int arr[5]={3,12,9,8,6};
+    int value = 8;
+    int index = getIndex(arr,value);      //这里应该传什么参数呢？
+    if(index!=-1)
+    {
+        printf("%d在数组中存在，下标为：%d\n",value,index);             
+    }
+    else
+    {
+        printf("%d在数组中不存在。\n",value);    
+    }
+    return 0;    
+}
+
+数组与字符串
+#include <stdio.h>
+/* 定义say函数 */
+void say(char string[])     //数组参数应该怎么写呢？
+{
+    printf("%s\n",string);
+}
+
+int main()
+{
+    //定义字符串数组
+    char string[] = "我在网上学习IT技能!";
+   say(string);  //调用say函数输出字符串
+    return 0;
+}
+字符串函数
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s1[100]="";
+    char s2[]="我爱,";
+    char s3[]="IT";
+    strcpy(s1,s2);
+    strcat(s1,s3);
+    printf("%s\n",s1);
+    return 0;    
+}
+多维数组定义练习
+#include <stdio.h>
+int main()
+{
+    int arr[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+    int arr[2][2];
+    arr2[0][0]=5;
+    arr2[0][1]=10;
+    arr2[1][0]=15;
+    arr2[1][1]=20;
+    return 0;    
+}
+多维数组遍历
+#include <stdio.h>
+int main()
+{
+    int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    int i,j;
+    int sum=0;
+    for(i=0;i<3;i++)
+    {
+       for(j=0;j<3;j++)
+       {
+           if(i%2==0 && j%2==0)
+           sum+=arr[i][j];
+       }
+    }
+    sum +=arr[1][1];
+    printf("对角线元素之和是：%d\n",sum);
+    return 0;    
+}
